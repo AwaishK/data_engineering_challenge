@@ -52,4 +52,5 @@ make run
     4) Logging 
     5) Schedule it to run periodically at certain period of time using crontab and apache airflow
     6) Visualization to see production and consumption in each zone using apache superset or metaplotlib or plotly
+    7) click application as a separate module
             
