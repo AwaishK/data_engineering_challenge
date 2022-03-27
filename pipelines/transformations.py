@@ -48,7 +48,11 @@ class Transformations:
         return df[['zone', 'hour', 'total']].reset_index(drop=True)
 
     def run(self) -> None:
-        for input_file_path, output_file_path in tqdm(zip(self.input_file_paths, self.output_file_paths), desc='Files to process'):
+        for input_file_path, output_file_path in tqdm(
+            zip(self.input_file_paths, self.output_file_paths),
+            desc='Files to process',
+            total=len(self.output_file_paths)
+        ):
             in_file = DIR_DATA.joinpath(input_file_path)
             out_file = DIR_DATA.joinpath(output_file_path)
             df = self.load_and_process_data_set(file_path=in_file)
